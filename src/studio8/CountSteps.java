@@ -8,12 +8,19 @@ package studio8;
 
 
 import java.util.Scanner;
+import java.io.File;
+import java.io.FileNotFoundException;
+
+
 
 public class CountSteps{
 	
-	public static void main() {
-		Scanner in = new Scanner (System.in);
-		int age = in.nextInt();
+	public static void main() throws FileNotFoundException {
+		Scanner in = new Scanner (new File("ac.csv"));
+		in.useDelimiter(",");
+		while(in.hasNext()) {
+			System.out.print(in.next());
+		}
 	}
 	
 	// File object
